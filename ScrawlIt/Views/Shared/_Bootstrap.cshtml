@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="/Content/less/bootstrap.less" />
+        <link rel="stylesheet" type="text/css" href="/Content/styles.css" />
+        @RenderSection("styles", required: false)
+        @Scripts.Render("~/bundles/modernizr")
+        
+    </head>
+    <body>
+        <header class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+            
+                    @Html.ActionLink("Scrawl It", "Index", "Home", new { @class="brand"})
+                    <div class="nav-collapse collapse">
+                        <!--<section id="login">
+                            @Html.Partial("_LoginPartial")
+                        </section>-->
+                        <nav>
+                            <ul id="menu" class="nav">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container" style="margin-top: 50px;">
+            <div id="body">
+                @RenderSection("featured", required: false)
+                <section class="content-wrapper main-content clear-fix">
+                    @RenderBody()
+                </section>
+            </div>
+            <footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

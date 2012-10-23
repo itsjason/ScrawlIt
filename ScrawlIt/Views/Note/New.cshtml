@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "New Note";
+}
+
+@section styles {
+    <style type="text/css">
+        #tag-container {
+            position: relative;
+        }
+        #added-tags {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+    </style>
+}
+
+@section scripts {
+    <script>
+        var addTag = function (tagName) {
+            var tag = '<span class="label label-info">' + tagName + '</span>';
+            $('#added-tags').append(tag);
+        };
+    </script>
+}
+
+<h1>
+    New Note
+</h1>
+
+<form class="form-horizontal hero-unit">
+    <div class="control-group">
+        <label class="control-label">
+            Notes
+        </label>
+        <div class="controls">
+            <textarea class="span5" rows="5"></textarea>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">
+            Tags
+        </label>
+        <div class="controls" id="tag-container">
+            <input id="tag-input" type="text" class="span5" />
+            <div id="added-tags">
+                <span class="label label-info">Info</span>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">
+            Anonymous
+        </label>
+        <div class="controls">
+            <input type="checkbox" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label  class="control-label">
+
+        </label>
+        <div class="controls">
+            <input type="submit" class="btn" />
+        </div>
+    </div>
+    
+</form>
